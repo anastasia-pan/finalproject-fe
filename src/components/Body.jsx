@@ -3,9 +3,11 @@ import { useEffect, State, useState } from "react";
 const Body = ({ data, setData }) => {
   const [firstRun, setFirstRun] = useState(true);
   useEffect(() => {
+    console.log(process.env);
+    console.log("got here");
     const fetchData = async () => {
       //http://localhost/(landing page)
-      const res = await fetch(`${process.env.REACT_APP_API}/`, {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/`, {
         method: "GET",
         mode: "cors",
         headers: {
@@ -20,7 +22,7 @@ const Body = ({ data, setData }) => {
       setFirstRun(false);
       fetchData();
     }
-  });
+  }, []);
 
   return (
     <div>
