@@ -7,7 +7,7 @@ const Body = ({ data, setData }) => {
     console.log("got here");
     const fetchData = async () => {
       //http://localhost/(landing page)
-      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/`, {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}`, {
         method: "GET",
         mode: "cors",
         headers: {
