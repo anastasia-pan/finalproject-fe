@@ -16,6 +16,7 @@ const Body = ({ data, setData }) => {
       });
 
       const data = await res.json();
+      console.log(data);
       setData(data);
     };
     if (firstRun) {
