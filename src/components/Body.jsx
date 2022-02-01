@@ -14,7 +14,7 @@ const Body = ({ data, setData }) => {
           "Content-Type": "application/json",
         },
       });
-
+      console.log(res);
       const data = await res.json();
       console.log(data);
       setData(data);
