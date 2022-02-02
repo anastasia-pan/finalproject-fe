@@ -15,6 +15,9 @@ const Objects = () => {
 
 
     <ul>
+    <li>
+        <Link to='/objects' >All Objects</Link>
+      </li>
 
       <li>
         <Link to='/objects/location' >Location</Link>
