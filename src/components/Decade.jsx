@@ -11,7 +11,7 @@ const Decade = () => {
 
         <div>
 
-
+        <h1>Decade</h1>
 
         </div>
 
