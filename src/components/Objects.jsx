@@ -13,7 +13,9 @@ const Objects = () => {
 
         <div>
 
-    <div className="searchNav">
+            <h1>Objects</h1>
+
+    {/* <div className="searchNav">
     <ul>
       <li>
         <input type="text" placeholder="Search..."></input>
@@ -43,7 +45,7 @@ const Objects = () => {
           <Route path='/objects/decade' element={<Decade/>} />
           <Route path='/objects/category' element={<Category/>} />
    
-    </Routes>
+    </Routes> */}
 
 
         </div>
