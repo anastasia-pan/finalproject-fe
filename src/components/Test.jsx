@@ -1,6 +1,6 @@
 import { useEffect, State, useState } from "react";
 
-const Body = ({ data, setData }) => {
+const Test = ({ data, setData }) => {
   const [firstRun, setFirstRun] = useState(true);
   useEffect(() => {
     console.log(process.env);
@@ -32,4 +32,6 @@ const Body = ({ data, setData }) => {
   );
 };
 
-export default Body;
+export default Test;
+
+

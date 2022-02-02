@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Body from "./components/Body";
+// import logo from "./logo.svg";
+ import "./App.css"
+import Test from "./components/Test.jsx"
 import { useState, setState } from "react";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <h1>Hello World</h1>
-      <Body data={data} setData={setData} />
+      <Test data={data} setData={setData} />
     </div>
   );
 }
