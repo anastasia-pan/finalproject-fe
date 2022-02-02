@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Test from "./components/Test";
+import Test from "./components/Test.jsx";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Objects from "./components/Objects";
