@@ -1,9 +1,6 @@
 
 
-// import {
-//     BrowserRouter as Router,
-//     Link
-//   } from "react-router-dom";
+
   
 const Decade = () => {
 
@@ -11,7 +8,7 @@ const Decade = () => {
 
         <div>
 
-
+        <h1>Decade</h1>
 
         </div>
 

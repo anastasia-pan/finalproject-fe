@@ -11,7 +11,7 @@ const Location = () => {
 
         <div>
 
-    <h1 className="location">Location</h1>
+    <h1>Location</h1>
 
         </div>
 
