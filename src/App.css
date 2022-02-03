@@ -1,38 +1,68 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap");
+
+Body {
   text-align: center;
+  background-color: #070404;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  width: 8rem;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  height: 7rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-decoration: none;
+}
+
+nav li {
+  margin: 0 3rem 0 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+nav a {
+  font-family: "Henny Penny", cursive;
+  list-style-type: none;
+  color: #afb8b0;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.objectNav {
+  align-items: left;
+}
+
+.objectNav li {
+  padding: 1rem;
+  list-style-type: none;
+  align-items: left;
+}
+
+.objectNav a {
+  padding: 1rem 2rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  color: #afb8b0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.4rem;
+  text-decoration: none;
+  margin: 0 3rem 0 0;
+  color: #135a5d;
+}
+
+h1 {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

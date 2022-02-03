@@ -14,7 +14,7 @@ const Objects = () => {
             <h1>Objects</h1>
 
 
-    <ul>
+    <ul className="objectNav">
     <li>
         <Link to='/objects' >All Objects</Link>
       </li>
