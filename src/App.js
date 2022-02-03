@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar"
 
 import creepy from "./assets/creepy.png";
 
-import { useState } from "react";
+import { useState, State } from "react";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -23,7 +23,7 @@ function App() {
     <Router>
       <div className="container">
        
-        <Navbar/>
+        <Navbar user={user} setUser={setUser}/>
 
 
         <Routes>

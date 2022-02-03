@@ -1,8 +1,8 @@
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import creepy from "../assets/creepy.png"
-
-function Navbar() {
+import Login from "./Login";
+function Navbar( { user, setUser } ) {
   return (
     <div className="navBar">
       <img src={creepy} alt="creepy curios" className="logo" />
@@ -18,11 +18,13 @@ function Navbar() {
               Find Objects
             </Link>
           </li>
+          
 
           <li>
-            <Link to="/profile" className="middle">
+              {user ?  <Link to="/profile" className="middle">
               Profile
-            </Link>
+            </Link> : <Login user={user} setUser={setUser} /> } 
+            
           </li>
 
           {/* <li><Login user={user} setUser={setUser}/></li> */}
