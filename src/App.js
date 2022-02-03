@@ -7,42 +7,24 @@ import Objects from "./components/Objects";
 import Location from "./components/Location";
 import Decade from "./components/Decade";
 import Category from "./components/Category";
+import Navbar from "./components/Navbar"
 
 import creepy from "./assets/creepy.png";
 
-import { useState } from "react";
+import { useState, State } from "react";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState({});
+  const [user, setUser]= useState(null);
 
   return (
     <Router>
       <div className="container">
-        <img src={creepy} alt="creepy curios" className="logo" />
-        <nav>
-          <ul>
-            <li>
-              <Link to="/" className="middle">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/objects" className="middle">
-                Find Objects
-              </Link>
-            </li>
+       
+        <Navbar user={user} setUser={setUser}/>
 
-            <li>
-              <Link to="/profile" className="middle">
-                Profile
-              </Link>
-            </li>
-
-            {/* <li><Login user={user} setUser={setUser}/></li> */}
-          </ul>
-        </nav>
 
         <Routes>
           <Route path="/" element={<Home />} />
