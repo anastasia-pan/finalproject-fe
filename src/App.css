@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap");
 
 Body {
   text-align: center;
-  background-color: #070404;
+  background-image: URL("./assets/bg.png");
 }
 
 .logo {
-  width: 8rem;
+  width: 4rem;
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 14%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -20,10 +21,14 @@ nav {
 }
 
 nav ul {
+  width: 660px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   text-decoration: none;
+  background-color: #aa9581;
+  box-shadow: 0 0 20px 20px #aa9581;
+  opacity: 0.5;
 }
 
 nav li {
@@ -33,34 +38,40 @@ nav li {
 }
 
 nav a {
-  font-family: "Henny Penny", cursive;
+  font-family: "Bigelow Rules", cursive;
   list-style-type: none;
-  color: #afb8b0;
-  font-size: 2rem;
+  padding: 0 1rem;
+  color: black;
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
   text-decoration: none;
 }
 
 .objectNav {
-  align-items: left;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 680px;
+  background-color: #92563e;
+  opacity: 0.85;
 }
 
 .objectNav li {
-  padding: 1rem;
+  padding: 0.7rem 1rem;
   list-style-type: none;
-  align-items: left;
 }
 
 .objectNav a {
-  padding: 1rem 2rem;
+  width: 5rem;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
-  color: #afb8b0;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.3rem;
   text-decoration: none;
-  margin: 0 3rem 0 0;
-  color: #135a5d;
+  margin: 0 1rem 0 0;
+  color: #f5feff;
 }
 
 h1 {
