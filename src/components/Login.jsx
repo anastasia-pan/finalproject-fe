@@ -3,7 +3,7 @@ import { useState } from "react";
 function Login ({user, setUser}){
     const [userName, setUserName] = useState("")
     const [password, setPassword] =useState("")
-    const baseUrl= `${process.env.REACT_APP_BASE_URL}user/login`
+    const baseUrl= `${process.env.REACT_APP_BASE_URL}/user/login`
 
     const handleUserName =(e) => setUserName(e.target.value)
     const handlePassword =(e) => setPassword(e.target.value)
