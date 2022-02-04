@@ -8,6 +8,7 @@ import Location from "./components/Location";
 import Decade from "./components/Decade";
 import Category from "./components/Category";
 import Navbar from "./components/Navbar"
+import Register from "./components/Register"
 
 import creepy from "./assets/creepy.png";
 
@@ -23,7 +24,9 @@ function App() {
     <Router>
       <div className="container">
        
-        <Navbar user={user} setUser={setUser}/>
+        <Navbar user={user} setUser={setUser} /> 
+       
+       
 
 
         <Routes>

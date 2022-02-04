@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import creepy from "../assets/creepy.png";
 import Login from "./Login";
+import Register from "./Register"
 function Navbar({ user, setUser }) {
   const logOut = () => {
     setUser(null);
@@ -33,7 +34,11 @@ function Navbar({ user, setUser }) {
                 </button>
               </>
             ) : (
-              <Login user={user} setUser={setUser} />
+              <>
+              <Login user={user} setUser={setUser} /> 
+              <Register/>
+              
+              </>
             )}
           </li>
 
