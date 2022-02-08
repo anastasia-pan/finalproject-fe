@@ -3,9 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap");
 
-Body {
-  text-align: center;
-  background-image: URL("./assets/bg.png");
+* {
+  box-sizing: border-box;
+
+  border: 1px solid red;
+}
+
+html {
+  background: URL("./assets/framed-landscape.png") -65% -80% no-repeat,
+    URL("./assets/cabinet.png") 50% -5% no-repeat,
+    URL("./assets/framed-girl.png") 130% -50% no-repeat,
+    URL("./assets/wallpaper.png") left top repeat;
 }
 
 .logo {
@@ -32,7 +40,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 3rem 0 0;
+  margin: 0 auto;
   text-decoration: none;
   list-style-type: none;
 }
@@ -80,4 +88,23 @@ h1 {
 
 .Test {
   color: white;
+}
+
+.cardContainer {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.totemsOnShelf {
+  margin: 0 auto;
+  width: 500px;
+  height: 100%;
+}
+
+.totem {
+  width: 15%;
+  margin: 1rem 1rem;
 }

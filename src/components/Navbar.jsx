@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import creepy from "../assets/creepy.png";
+
 import Login from "./Login";
 import Register from "./Register"
 function Navbar({ user, setUser }) {
@@ -9,7 +9,7 @@ function Navbar({ user, setUser }) {
 
   return (
     <div className="navBar">
-      <img src={creepy} alt="creepy curios" className="logo" />
+      
       <nav>
         <ul>
           <li>
