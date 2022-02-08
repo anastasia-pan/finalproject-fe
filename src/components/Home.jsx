@@ -10,6 +10,7 @@ import terracotta from "../assets/terracotta.png";
 import footBook from "../assets/foot-book.png";
 import lemb from "../assets/lemb.png";
 import cabinet from "../assets/cabinet.png";
+import candlestick from "../assets/candlestick.png";
 
   
 const Home = () => {
@@ -18,6 +19,39 @@ const Home = () => {
 
         <div className="home">
 
+        <div className="animatedCandle">
+            <div className="entireCandle">
+        <div class="holder">
+        <div class="candle">
+            <div class="blinking-glow"></div>
+            <div class="thead"></div>
+            <div class="glow"></div>
+            <div class="flame"></div>
+        </div>
+        <div class="wick"></div>
+        <div class="wax"></div>
+        </div>
+        </div>
+        <div className="stick"> <img src={candlestick}/></div>
+        </div>
+
+        <div className="animatedCandle2">
+            <div className="entireCandle">
+        <div class="holder">
+        <div class="candle">
+            <div class="blinking-glow"></div>
+            <div class="thead"></div>
+            <div class="glow"></div>
+            <div class="flame"></div>
+        </div>
+        <div class="wick"></div>
+        <div class="wax"></div>
+        </div>
+        </div>
+        <div className="stick"> <img src={candlestick}/></div>
+        </div>
+
+        
         <img src={cabinet} className="cabinet"/>
 
         <div className="cabinetObjects">
