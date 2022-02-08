@@ -87,6 +87,7 @@ h1 {
 
 .cabinet {
   margin: 0 auto;
+  width: 830px;
   object-fit: contain;
   position: fixed;
   bottom: 0;
@@ -103,13 +104,13 @@ h1 {
 .thirdShelf,
 .fourthShelf {
   width: 500px;
-  height: 150px;
+  height: 140px;
   position: static;
   margin: 0 auto;
 }
 
 .totem {
-  width: 16%;
+  width: 17%;
   margin: 0 2.5rem;
 }
 
@@ -120,7 +121,7 @@ h1 {
 
 .doll {
   width: 20%;
-  margin: -2.6rem 1.5rem;
+  margin: -2.9rem 1.5rem;
 }
 
 .dress {
