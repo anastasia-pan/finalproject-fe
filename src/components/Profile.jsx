@@ -1,10 +1,10 @@
-import CardContainer from "./CardContainer";
 import Card from "./Card";
 import { State, useState, useEffect } from "react";
 
 const Profile = ({ user, allObjects }) => {
   const [userList, setUserList] = useState([]);
   const [trigger, setTrigger] = useState(true);
+
 
   const populateListfromFav = async () => {
     const res = await fetch(
@@ -19,6 +19,7 @@ const Profile = ({ user, allObjects }) => {
     setUserList(list);
     console.log(list);
   };
+
 
   useEffect(() => {
     populateListfromFav();
@@ -49,6 +50,7 @@ const Profile = ({ user, allObjects }) => {
     );
     populateListfromFav();
   };
+
 
   const addNewtoDBandFav = async () => {};
 

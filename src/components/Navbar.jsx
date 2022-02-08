@@ -18,11 +18,26 @@ function Navbar({ user, setUser }) {
             </Link>
           </li>
           <li>
-            <Link to="/objects" className="middle">
-              Find Objects
+            <Link to="/location" className="middle">
+              Locations
             </Link>
           </li>
-
+          <li>
+            <Link to="/decades" className="middle">
+              Decades
+            </Link>
+          </li>
+          <li>
+            <Link to="/decades" className="middle">
+              Category
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" className="middle">
+              Login/Register
+            </Link>
+          </li>
+          
           <li>
             {user ? (
               <>
@@ -45,6 +60,7 @@ function Navbar({ user, setUser }) {
           {/* <li><Login user={user} setUser={setUser}/></li> */}
         </ul>
       </nav>
+    
     </div>
   );
 }

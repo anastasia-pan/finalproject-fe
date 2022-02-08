@@ -39,10 +39,12 @@ function App() {
           <Route path="/objects/location" element={<Location />} />
           <Route path="/objects/decade" element={<Decade />} />
           <Route path="/objects/category" element={<Category />} />
+
           <Route
             path="/profile"
             element={<Profile user={user} allObjects={allObjects} />}
           />
+
           <Route path="/login" element={<Login />} />
         </Routes>
         <Test data={data} setData={setData} />

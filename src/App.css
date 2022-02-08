@@ -10,76 +10,47 @@
 }
 
 html {
-  background: URL("./assets/framed-landscape.png") -65% -80% no-repeat,
-    URL("./assets/cabinet.png") 50% -5% no-repeat,
-    URL("./assets/framed-girl.png") 130% -50% no-repeat,
-    URL("./assets/wallpaper.png") left top repeat;
+  background: URL("./assets/wallpaper.png") left top repeat;
 }
-
-.logo {
-  width: 4rem;
-  position: absolute;
-  top: 14%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container {
+  height: 100vh;
+  background: URL("./assets/portrait-half-left.png") left center no-repeat,
+    URL("./assets/portrait-half-right.png") right center no-repeat;
 }
 
 nav {
-  height: 7rem;
+  background-color: #b69b7c;
+  box-shadow: 20px 20px 30px #b69b7c;
+  opacity: 0.7;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 nav ul {
-  width: 660px;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: space-between;
   text-decoration: none;
-  background-color: #aa9581;
-  box-shadow: 0 0 20px 20px #aa9581;
-  opacity: 0.5;
 }
 
 nav li {
-  margin: 0 auto;
   text-decoration: none;
   list-style-type: none;
+  padding: 0 2rem;
 }
 
 nav a {
   font-family: "Bigelow Rules", cursive;
   list-style-type: none;
-  padding: 0 1rem;
-  color: black;
-  font-size: 4rem;
+  color: #290904;
+  font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   text-decoration: none;
-}
-
-.objectNav {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  width: 680px;
-  background-color: #92563e;
-  opacity: 0.85;
-}
-
-.objectNav li {
-  padding: 0.7rem 1rem;
-  list-style-type: none;
-}
-
-.objectNav a {
-  width: 5rem;
-  font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.3rem;
-  text-decoration: none;
-  margin: 0 1rem 0 0;
-  color: #f5feff;
 }
 
 h1 {
@@ -98,13 +69,57 @@ h1 {
   margin: 0 auto;
 }
 
-.totemsOnShelf {
+.home {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.cabinet {
   margin: 0 auto;
+  width: 830px;
+  object-fit: contain;
+  position: fixed;
+  bottom: 0;
+}
+.cabinetObjects {
+  margin: 0 auto;
+  object-fit: contain;
+  position: fixed;
+  bottom: 0;
+}
+
+.firstShelf,
+.secondShelf,
+.thirdShelf,
+.fourthShelf {
   width: 500px;
-  height: 100%;
+  height: 140px;
+  position: static;
+  margin: 0 auto;
 }
 
 .totem {
+  width: 17%;
+  margin: 0 2.5rem;
+}
+
+.car {
+  width: 40%;
+  margin: 0 1.5rem;
+}
+
+.doll {
+  width: 20%;
+  margin: -2.9rem 1.5rem;
+}
+
+.dress {
   width: 15%;
-  margin: 1rem 1rem;
+  margin: -1.2rem 7.5rem;
+}
+
+.anguished {
+  width: 20%;
+  margin: 0 4.5rem;
 }
