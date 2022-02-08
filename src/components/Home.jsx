@@ -11,6 +11,7 @@ import footBook from "../assets/foot-book.png";
 import lemb from "../assets/lemb.png";
 import cabinet from "../assets/cabinet.png";
 import candlestick from "../assets/candlestick.png";
+import candlestick2 from "../assets/candlestick2.png";
 
   
 const Home = () => {
@@ -48,7 +49,7 @@ const Home = () => {
         <div class="wax"></div>
         </div>
         </div>
-        <div className="stick"> <img src={candlestick}/></div>
+        <div className="stick"> <img src={candlestick2}/></div>
         </div>
 
         
