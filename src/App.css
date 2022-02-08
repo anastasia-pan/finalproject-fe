@@ -18,45 +18,36 @@ html {
     URL("./assets/portrait-half-right.png") right center no-repeat;
 }
 
-.logo {
-  width: 4rem;
-  position: absolute;
-  top: 14%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.navBar {
-  display: flex;
-  justify-content: space-between;
-}
 nav {
-  height: 7rem;
+  background-color: #b69b7c;
+  box-shadow: 20px 20px 30px #b69b7c;
+  opacity: 0.7;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 nav ul {
-  width: 660px;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: space-between;
   text-decoration: none;
-  background-color: #aa9581;
-  box-shadow: 0 0 20px 20px #aa9581;
-  opacity: 0.5;
 }
 
 nav li {
-  margin: 0 auto;
   text-decoration: none;
   list-style-type: none;
+  padding: 0 2rem;
 }
 
 nav a {
   font-family: "Bigelow Rules", cursive;
   list-style-type: none;
-  padding: 0 1rem;
-  color: black;
-  font-size: 4rem;
+  color: #290904;
+  font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -81,7 +72,6 @@ h1 {
 .home {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   height: 100vh;
 }
 
