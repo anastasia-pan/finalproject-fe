@@ -1,10 +1,26 @@
 import Card from "./Card";
 import { State, useState, useEffect } from "react";
 
-const Profile = ({ user, allObjects }) => {
+const Profile = ({ user, allObjects, setAllObjects }) => {
   const [userList, setUserList] = useState([]);
   const [trigger, setTrigger] = useState(true);
 
+  const handleFetch = async () => {
+    const res = await fetch(
+      //   process.env url needed WILL BE CHANGED ALSO
+      `${process.env.REACT_APP_BASE_URL}/admin/totem`,
+
+      {
+        mode: "cors",
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    const data = await res.json();
+
+    setAllObjects(data);
+  };
 
   const populateListfromFav = async () => {
     const res = await fetch(
@@ -20,13 +36,15 @@ const Profile = ({ user, allObjects }) => {
     console.log(list);
   };
 
-
   useEffect(() => {
-    populateListfromFav();
-  }, []);
+    if (user) {
+      populateListfromFav();
+      handleFetch();
+    }
+  }, [user]);
 
   const addExistingtoFav = async (object) => {
-    const res = await fetch(
+    await fetch(
       `${process.env.REACT_APP_BASE_URL}/favourites/${user.id}/${object.id}`,
       {
         mode: "cors",
@@ -51,7 +69,6 @@ const Profile = ({ user, allObjects }) => {
     populateListfromFav();
   };
 
-
   const addNewtoDBandFav = async () => {};
 
   return (
@@ -59,16 +76,15 @@ const Profile = ({ user, allObjects }) => {
       <h1 className="profile">Profile </h1>
       <div className="userList">
         {/* map all from user favourites */}
-        {userList.map((item) => {
+        {userList.map((item, index) => {
           console.log(item);
           console.log(item.name);
           return (
             <>
-              {" "}
-              <Card key={item.id} item={item} />
-              {/* <button value="delete" onClick={() => deletefromFavList(item)}>
-                delete{" "}
-              </button> */}
+              <Card key={index} item={item} />
+              <button value="delete" onClick={() => deletefromFavList(item)}>
+                delete
+              </button>
             </>
           );
         })}
@@ -79,11 +95,15 @@ const Profile = ({ user, allObjects }) => {
       </div>
       {/* map all objects from admin database */}
       <div className="cardContainer">
-        {allObjects.map((item) => {
+        {allObjects.map((item, index) => {
           return (
             <>
-              <Object key={item.id} item={item} />;
-              <button value="add" onClick={() => addExistingtoFav(item)}>
+              <Object key={item.id} item={item} />
+              <button
+                key={index}
+                value="add"
+                onClick={() => addExistingtoFav(item)}
+              >
                 Add
               </button>
             </>

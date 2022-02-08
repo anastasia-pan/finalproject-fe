@@ -42,7 +42,13 @@ function App() {
 
           <Route
             path="/profile"
-            element={<Profile user={user} allObjects={allObjects} />}
+            element={
+              <Profile
+                user={user}
+                allObjects={allObjects}
+                setAllObjects={setAllObjects}
+              />
+            }
           />
 
           <Route path="/login" element={<Login />} />
