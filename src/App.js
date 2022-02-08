@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import CardContainer from "./components/CardContainer";
 import Card from "./components/Card";
+import Login from "./components/Login";
 
 import { useState } from "react";
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/objects/decade" element={<Decade />} />
           <Route path="/objects/category" element={<Category />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Test data={data} setData={setData} />
       </div>

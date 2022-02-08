@@ -9,6 +9,8 @@ import wedding from "../assets/bakers-wedding-dress.png";
 import terracotta from "../assets/terracotta.png";
 import footBook from "../assets/foot-book.png";
 import lemb from "../assets/lemb.png";
+import cabinet from "../assets/cabinet.png";
+
   
 const Home = () => {
 
@@ -16,24 +18,36 @@ const Home = () => {
 
         <div className="home">
 
-        <h1>Home</h1>
+        <img src={cabinet} className="cabinet"/>
 
-        <div className="totemsOnShelf">
+        <div className="cabinetObjects">
+
+        <div className="firstShelf">
 
         <img src={hands} className="totem"/>
-        <img src={annabelle} className="totem"/>
+        <img src={annabelle} className="doll"/>
         <img src={rock} className="totem"/>
+        </div>
+
+        <div className="secondShelf">
 
         <img src={vase} className="totem"/>
-        <img src={wedding} className="totem"/>
+        <img src={wedding} className="dress"/>
+        </div>
+
+        <div className="thirdShelf">
 
         <img src={terracotta} className="totem"/>
         <img src={footBook} className="totem"/>
         <img src={lemb} className="totem"/>
+        </div>
 
-        <img src={jamesDean} className="totem"/>
-        <img src={anguished} className="totem"/>
-        
+        <div className="fourthShelf">
+
+        <img src={jamesDean} className="car"/>
+        <img src={anguished} className="anguished"/>
+        </div>
+
         </div>
         
 
