@@ -18,6 +18,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 function App() {
   const [data, setData] = useState({});
   const [user, setUser] = useState(null);
+  const [allObjects, setAllObjects] = useState([]);
 
   return (
     <Router>
@@ -25,11 +26,22 @@ function App() {
         <Navbar user={user} setUser={setUser} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/objects" element={<CardContainer />} />
+          <Route
+            path="/objects"
+            element={
+              <CardContainer
+                allObjects={allObjects}
+                setAllObjects={setAllObjects}
+              />
+            }
+          />
           <Route path="/objects/location" element={<Location />} />
           <Route path="/objects/decade" element={<Decade />} />
           <Route path="/objects/category" element={<Category />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={<Profile user={user} allObjects={allObjects} />}
+          />
         </Routes>
         <Test data={data} setData={setData} />
       </div>
