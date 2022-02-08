@@ -129,7 +129,7 @@ h1 {
   width: 200px;
   position: fixed;
   bottom: 0;
-  right: 12rem;
+  right: 10rem;
 }
 
 .animatedCandle2 {
@@ -137,7 +137,7 @@ h1 {
   width: 200px;
   position: fixed;
   bottom: 0;
-  right: 75rem;
+  left: 14rem;
 }
 
 .holder {
