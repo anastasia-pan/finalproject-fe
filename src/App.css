@@ -53,8 +53,13 @@ nav a {
   text-decoration: none;
 }
 
-h1 {
-  color: white;
+
+.signinRegister{
+  font-family: "Bigelow Rules", cursive;
+  color: #290904;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
 }
 
 .Test {

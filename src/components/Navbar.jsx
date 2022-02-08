@@ -35,14 +35,14 @@ function Navbar({ user, setUser }) {
               Category
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/login" className="middle">
               Login/Register
             </Link>
-          </li>
+          </li> */}
           
           <li>
-            function 
+             
             {user ? (
               <>
                 <Link to="/profile" className="middle">
@@ -54,8 +54,8 @@ function Navbar({ user, setUser }) {
               </>
             ) : (
               <>
-              <button onClick={()=>setIsOpen(true)}>Login/Register</button>
-              <Modal open={isOpen} onClose={()=> setIsOpen}>
+              <li className="signinRegister" onClick={()=>setIsOpen(true)}>Sign-in/ Register</li>
+              <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
               <Login user={user} setUser={setUser} /> 
               <Register/>
               </Modal>
