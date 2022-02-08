@@ -37,11 +37,13 @@ const Profile = ({ user, allObjects }) => {
   };
 
   const deletefromFavList = async (object) => {
+    console.log(user);
+    console.log(user.id);
     const res = await fetch(
       `${process.env.REACT_APP_BASE_URL}/favourites/${user.id}/${object.id}`,
       {
         mode: "cors",
-        method: "GET",
+        method: "DELETE",
         headers: { "Content-Type": "application/json" },
       }
     );
@@ -62,22 +64,25 @@ const Profile = ({ user, allObjects }) => {
             <>
               {" "}
               <Card key={item.id} item={item} />
-              <button value="delete" onClick={deletefromFavList}>
+              {/* <button value="delete" onClick={() => deletefromFavList(item)}>
                 delete{" "}
-              </button>
+              </button> */}
             </>
           );
         })}
+      </div>
+      <div>
+        <div> Add new object</div>
+        <button onClick={addNewtoDBandFav}> Add your own object </button>
       </div>
       {/* map all objects from admin database */}
       <div className="cardContainer">
         {allObjects.map((item) => {
           return (
             <>
-              {" "}
               <Object key={item.id} item={item} />;
               <button value="add" onClick={() => addExistingtoFav(item)}>
-                Add{" "}
+                Add
               </button>
             </>
           );
@@ -87,7 +92,7 @@ const Profile = ({ user, allObjects }) => {
   );
 };
 
-const Object = ({ item, add }) => {
+const Object = ({ item }) => {
   return (
     <div>
       <p>Name: {item.name}</p>

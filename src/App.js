@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import CardContainer from "./components/CardContainer";
 import Card from "./components/Card";
+import Login from "./components/Login";
 
 import { useState } from "react";
 
@@ -42,6 +43,7 @@ function App() {
             path="/profile"
             element={<Profile user={user} allObjects={allObjects} />}
           />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Test data={data} setData={setData} />
       </div>
