@@ -10,10 +10,12 @@
 }
 
 html {
-  background: URL("./assets/framed-landscape.png") -65% -80% no-repeat,
-    URL("./assets/cabinet.png") 50% -5% no-repeat,
-    URL("./assets/framed-girl.png") 130% -50% no-repeat,
-    URL("./assets/wallpaper.png") left top repeat;
+  background: URL("./assets/wallpaper.png") left top repeat;
+}
+.container {
+  height: 100vh;
+  background: URL("./assets/portrait-half-left.png") left center no-repeat,
+    URL("./assets/portrait-half-right.png") right center no-repeat;
 }
 
 .logo {
@@ -24,6 +26,10 @@ html {
   transform: translate(-50%, -50%);
 }
 
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
 nav {
   height: 7rem;
 }
@@ -56,32 +62,6 @@ nav a {
   text-decoration: none;
 }
 
-.objectNav {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  width: 680px;
-  background-color: #92563e;
-  opacity: 0.85;
-}
-
-.objectNav li {
-  padding: 0.7rem 1rem;
-  list-style-type: none;
-}
-
-.objectNav a {
-  width: 5rem;
-  font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.3rem;
-  text-decoration: none;
-  margin: 0 1rem 0 0;
-  color: #f5feff;
-}
-
 h1 {
   color: white;
 }
@@ -98,13 +78,57 @@ h1 {
   margin: 0 auto;
 }
 
-.totemsOnShelf {
+.home {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
+  height: 100vh;
+}
+
+.cabinet {
+  margin: 0 auto;
+  object-fit: contain;
+  position: fixed;
+  bottom: 0;
+}
+.cabinetObjects {
+  margin: 0 auto;
+  object-fit: contain;
+  position: fixed;
+  bottom: 0;
+}
+
+.firstShelf,
+.secondShelf,
+.thirdShelf,
+.fourthShelf {
   width: 500px;
-  height: 100%;
+  height: 150px;
+  position: static;
+  margin: 0 auto;
 }
 
 .totem {
+  width: 16%;
+  margin: 0 2.5rem;
+}
+
+.car {
+  width: 40%;
+  margin: 0 1.5rem;
+}
+
+.doll {
+  width: 20%;
+  margin: -2.6rem 1.5rem;
+}
+
+.dress {
   width: 15%;
-  margin: 1rem 1rem;
+  margin: -1.2rem 7.5rem;
+}
+
+.anguished {
+  width: 20%;
+  margin: 0 4.5rem;
 }

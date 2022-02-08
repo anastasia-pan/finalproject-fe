@@ -4,6 +4,9 @@
 //     BrowserRouter as Router,
 //     Link
 //   } from "react-router-dom";
+
+import CardContainer from "./CardContainer";
+
   
 const Profile = () => {
 
@@ -11,7 +14,8 @@ const Profile = () => {
 
         <div>
 
-<h1 className="profile">Profile</h1>
+<h1 className="profile">Welcome</h1>
+<CardContainer />
 
         </div>
 
