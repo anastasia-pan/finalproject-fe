@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import React, {useState} from 'react'
+import Modal from "./Modal";
 import Login from "./Login";
 import Register from "./Register"
+
 function Navbar({ user, setUser }) {
   const logOut = () => {
     setUser(null);
   };
+  const [isOpen, setIsOpen]=useState(false)
 
   return (
     <div className="navBar">
@@ -24,6 +27,7 @@ function Navbar({ user, setUser }) {
           </li>
 
           <li>
+            function 
             {user ? (
               <>
                 <Link to="/profile" className="middle">
@@ -35,9 +39,11 @@ function Navbar({ user, setUser }) {
               </>
             ) : (
               <>
+              <button onClick={()=>setIsOpen(true)}>Login/Register</button>
+              <Modal open={isOpen} onClose={()=> setIsOpen}>
               <Login user={user} setUser={setUser} /> 
               <Register/>
-              
+              </Modal>
               </>
             )}
           </li>
