@@ -9,8 +9,9 @@ import terracotta from "../assets/terracotta.png";
 import footBook from "../assets/foot-book.png";
 import lemb from "../assets/lemb.png";
 import cabinet from "../assets/cabinet.png";
-import candlestick from "../assets/candlestick.png";
-import candlestick2 from "../assets/candlestick2.png";
+
+import 'animate.css';
+
 
 
 const click = (name) => {
@@ -20,7 +21,7 @@ const click = (name) => {
 const Home = () => {
   return (
     <div className="home">
-      <div className="animatedCandle">
+      <div className="animatedCandle animate__animated animate__fadeIn animate__delay-1s animate__repeat-1	1 animate__slower	3s">
         <div className="entireCandle">
           <div className="holder">
             <div className="candle">
@@ -32,14 +33,10 @@ const Home = () => {
             <div className="wick"></div>
             <div className="wax"></div>
           </div>
-        </div>
-        <div className="stick">
-          {" "}
-          <img src={candlestick} />
         </div>
       </div>
 
-      <div className="animatedCandle2">
+      <div className="animatedCandle2 animate__animated animate__fadeIn animate__delay-2s animate__repeat-1	1 animate__slower	3s">
         <div className="entireCandle">
           <div className="holder">
             <div className="candle">
@@ -51,10 +48,6 @@ const Home = () => {
             <div className="wick"></div>
             <div className="wax"></div>
           </div>
-        </div>
-        <div className="stick">
-          {" "}
-          <img src={candlestick2} />
         </div>
       </div>
 
@@ -69,7 +62,7 @@ const Home = () => {
               image: hands,
               className: "totem",
             },
-            { name: "Annabelle", image: annabelle, className: "doll" },
+            { name: "Annabelle", image: annabelle, className: "doll animate__animated animate__headShake animate__delay-3s animate__repeat-3	3 animate__slower	20s" },
             { name: "Uluru Rocks", image: rock, className: "totem" },
           ]}
         />
@@ -77,7 +70,7 @@ const Home = () => {
         <Shelf
           name="secondShelf"
           items={[
-            { name: "Basano Vase", image: vase, className: "totem" },
+            { name: "Basano Vase", image: vase, className: "totem vase" },
             {
               name: "Baker's Wedding Dress",
               image: wedding,
@@ -108,7 +101,7 @@ const Home = () => {
             {
               name: "James Dean's Car aka Little Bastard",
               image: jamesDean,
-              className: "car",
+              className: "car totem animate__animated animate__lightSpeedInRight animate__delay-0s animate__repeat-1 animate__slower	3s",
             },
             {
               name: "The Anguished Man",
@@ -127,7 +120,7 @@ const Shelf = ({ name, items }) => {
     <div className={name}>
       {items.map((item, index) => {
         return (
-          <img
+          <img 
             src={item.image}
             key={index}
             className={item.className}

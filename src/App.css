@@ -6,7 +6,7 @@
 * {
   box-sizing: border-box;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 html {
@@ -16,6 +16,10 @@ html {
   height: 100vh;
   background: URL("./assets/portrait-half-left.png") left center no-repeat,
     URL("./assets/portrait-half-right.png") right center no-repeat;
+}
+
+a {
+  cursor: pointer;
 }
 
 nav {
@@ -40,7 +44,8 @@ nav ul {
 nav li {
   text-decoration: none;
   list-style-type: none;
-  padding: 0 2rem;
+  text-align: center;
+  width: 300px;
 }
 
 nav a {
@@ -51,6 +56,7 @@ nav a {
   font-weight: 600;
   letter-spacing: 0.1rem;
   text-decoration: none;
+  margin: 0 1rem;
 }
 
 .signinRegister {
@@ -128,6 +134,10 @@ nav a {
   margin: 0 4.5rem;
 }
 
+.vase {
+  margin: 0 1rem 0 5rem;
+}
+
 .addNewObj {
   margin: 0 auto;
   width: 20rem;
@@ -164,6 +174,38 @@ p {
   font-weight: 600;
 }
 
+form {
+  margin: 0 auto;
+  width: 800px;
+}
+
+label {
+  font-family: "Poppins";
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  align-items: center;
+  text-align: center;
+  margin: 0 1.5rem;
+}
+
+input {
+  width: 10.5rem;
+  margin: 1rem 1rem 0 0;
+  padding: 0.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Bigelow Rules", cursive;
+  color: #290904;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin: 2rem 0 1rem 0;
+}
+
 .userListContainer,
 .adminListContainer {
   display: flex;
@@ -185,7 +227,7 @@ p {
 }
 
 .welcomeFrame {
-  margin: 4rem auto;
+  margin: 5rem auto;
   background: URL("../src/assets/welcome.png");
   width: 700px;
   height: 247px;
@@ -193,12 +235,23 @@ p {
 
 .welcome {
   text-align: left;
-  margin: 4rem 4rem;
+  margin: 0 auto;
+  padding: 4rem 0;
   width: 500px;
   height: 150px;
 }
 
 /* ===============button======================= */
+
+.submit,
+.logout {
+  max-width: 6rem;
+  height: 2rem;
+}
+.xButton {
+  max-width: 2rem;
+  height: 2rem;
+}
 
 .addButton,
 .deleteButton {
@@ -212,11 +265,10 @@ p {
   appearance: button;
   background-color: #71482f;
   border: solid transparent;
-
   border-width: 0 0 4px;
   box-sizing: border-box;
   box-shadow: 5px 10px 20px #2b1f17;
-  color: black;
+  color: #e5d4b5;
   cursor: pointer;
   display: inline-block;
   font-family: "Poppins";
@@ -261,7 +313,7 @@ p {
 }
 
 .button-19:hover:not(:disabled) {
-  filter: brightness(80%);
+  filter: brightness(70%);
 }
 
 .button-19:disabled {

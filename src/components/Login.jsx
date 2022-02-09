@@ -47,7 +47,7 @@ function Login({ user, setUser }) {
           onChange={handlePassword}
         />
 
-        <input type="submit" value="Submit" />
+        <input className="submit" type="submit" value="Submit" className="button-19 submit" role="button"/>
       </form>
     </>
   );
