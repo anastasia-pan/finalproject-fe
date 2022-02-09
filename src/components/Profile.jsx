@@ -124,8 +124,6 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
         {allObjects.map((item, index) => {
           return (
             <>
-              <Totem key={item.id} item={item} />
-
               <div className="cardAndAddButton">
                 <Totem key={item.id} item={item} />
                 <div className="addButton">
