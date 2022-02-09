@@ -12,9 +12,22 @@ import cabinet from "../assets/cabinet.png";
 import candlestick from "../assets/candlestick.png";
 import candlestick2 from "../assets/candlestick2.png";
 
-
-const click = (name) => {
+const click = async (name) => {
+  const url = `${process.env.REACT_APP_BASE_URL}/totem/name/find`;
+  console.log(url);
   console.log(`I'm an object called: ${name}`);
+  const payload = JSON.stringify({ name: name });
+  console.log(payload);
+  const res = await fetch(`${process.env.REACT_APP_BASE_URL}/totem/name/find`, {
+    mode: "cors",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: payload,
+  });
+  let returned = await res.json();
+  console.log(returned);
 };
 
 const Home = () => {
@@ -34,7 +47,6 @@ const Home = () => {
           </div>
         </div>
         <div className="stick">
-          {" "}
           <img src={candlestick} />
         </div>
       </div>
@@ -69,7 +81,7 @@ const Home = () => {
               image: hands,
               className: "totem",
             },
-            { name: "Annabelle", image: annabelle, className: "doll" },
+            { name: "Annabelle Doll", image: annabelle, className: "doll" },
             { name: "Uluru Rocks", image: rock, className: "totem" },
           ]}
         />

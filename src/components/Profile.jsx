@@ -69,14 +69,17 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
   //adds a brand new Totem to database, and adds to user favourites
   const addNewTotem = async (object) => {
     const payload = JSON.stringify(object);
-    const res = await fetch(`${process.env.REACT_APP_API}/totem/${user.id}`, {
-      mode: "cors",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: payload,
-    });
+    const res = await fetch(
+      `${process.env.REACT_APP_BASE_URL}/totem/${user.id}`,
+      {
+        mode: "cors",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: payload,
+      }
+    );
     let returnedTotem = await res.json();
     addExistingtoFav(returnedTotem);
   };
