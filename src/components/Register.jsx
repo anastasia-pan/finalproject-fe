@@ -25,7 +25,7 @@ function Register() {
   };
   return (
     <form onSubmit={submitForm}>
-      <label> Register User </label>
+      <h1>Register</h1>
       <label htmlFor="user">Username:</label>
       <input type="text" name="user" value={user} onChange={handleUserChange} />
 
@@ -37,7 +37,7 @@ function Register() {
         onChange={handlePasswordChange}
       />
 
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" className="button-19 submit" role="button" />
     </form>
   );
 }

@@ -48,13 +48,13 @@ function Navbar({ user, setUser }) {
                 <Link to="/profile" className="middle">
                   Profile
                 </Link>
-                <button type="submit" onClick={logOut}>
+                <button type="submit" className="button-19 logout" role="button" onClick={logOut}>
                   Log out
                 </button>
               </>
             ) : (
               <>
-              <li className="signinRegister" onClick={()=>setIsOpen(true)}>Sign-in/ Register</li>
+              <li className="signinRegister" onClick={()=>setIsOpen(true)}>Login/Register</li>
               <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
               <Login user={user} setUser={setUser} /> 
               <Register/>
