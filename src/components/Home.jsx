@@ -13,9 +13,22 @@ import cabinet from "../assets/cabinet.png";
 import 'animate.css';
 
 
-
-const click = (name) => {
+const click = async (name) => {
+  const url = `${process.env.REACT_APP_BASE_URL}/totem/name/find`;
+  console.log(url);
   console.log(`I'm an object called: ${name}`);
+  const payload = JSON.stringify({ name: name });
+  console.log(payload);
+  const res = await fetch(`${process.env.REACT_APP_BASE_URL}/totem/name/find`, {
+    mode: "cors",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: payload,
+  });
+  let returned = await res.json();
+  console.log(returned);
 };
 
 const Home = () => {
@@ -34,6 +47,7 @@ const Home = () => {
             <div className="wax"></div>
           </div>
         </div>
+
       </div>
 
       <div className="animatedCandle2 animate__animated animate__fadeIn animate__delay-2s animate__repeat-1	1 animate__slower	3s">
@@ -62,6 +76,7 @@ const Home = () => {
               image: hands,
               className: "totem",
             },
+
             { name: "Annabelle", image: annabelle, className: "doll animate__animated animate__headShake animate__delay-3s animate__repeat-3	3 animate__slower	20s" },
             { name: "Uluru Rocks", image: rock, className: "totem" },
           ]}
