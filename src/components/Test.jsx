@@ -14,9 +14,7 @@ const Test = ({ data, setData }) => {
           "Content-Type": "application/json",
         },
       });
-      console.log(res);
       const data = await res.json();
-      console.log(data);
       setData(data);
     };
     if (firstRun) {
@@ -33,5 +31,3 @@ const Test = ({ data, setData }) => {
 };
 
 export default Test;
-
-
