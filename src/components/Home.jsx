@@ -9,29 +9,29 @@ import terracotta from "../assets/terracotta.png";
 import footBook from "../assets/foot-book.png";
 import lemb from "../assets/lemb.png";
 import cabinet from "../assets/cabinet.png";
-
-import 'animate.css';
-
-
-const click = async (name) => {
-  const url = `${process.env.REACT_APP_BASE_URL}/totem/name/find`;
-  console.log(url);
-  console.log(`I'm an object called: ${name}`);
-  const payload = JSON.stringify({ name: name });
-  console.log(payload);
-  const res = await fetch(`${process.env.REACT_APP_BASE_URL}/totem/name/find`, {
-    mode: "cors",
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: payload,
-  });
-  let returned = await res.json();
-  console.log(returned);
-};
+import { State, setState, useState } from "react";
+import "animate.css";
 
 const Home = () => {
+  const [currentTotem, setCurrentTotem] = useState({});
+
+  const click = async (name) => {
+    name = encodeURI(name);
+    const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${name}`;
+    console.log(url);
+    console.log(`I'm an object called: ${name}`);
+    const payload = JSON.stringify({ name: name });
+    const res = await fetch(url, {
+      mode: "cors",
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let totem = await res.json();
+    setCurrentTotem(totem);
+    console.log(currentTotem);
+  };
   return (
     <div className="home">
       <div className="animatedCandle animate__animated animate__fadeIn animate__delay-1s animate__repeat-1	1 animate__slower	3s">
@@ -47,7 +47,6 @@ const Home = () => {
             <div className="wax"></div>
           </div>
         </div>
-
       </div>
 
       <div className="animatedCandle2 animate__animated animate__fadeIn animate__delay-2s animate__repeat-1	1 animate__slower	3s">
@@ -77,9 +76,15 @@ const Home = () => {
               className: "totem",
             },
 
-            { name: "Annabelle", image: annabelle, className: "doll animate__animated animate__headShake animate__delay-3s animate__repeat-3	3 animate__slower	20s" },
+            {
+              name: "Annabelle Doll",
+              image: annabelle,
+              className:
+                "doll animate__animated animate__headShake animate__delay-3s animate__repeat-3	3 animate__slower	20s",
+            },
             { name: "Uluru Rocks", image: rock, className: "totem" },
           ]}
+          click={click}
         />
 
         <Shelf
@@ -92,12 +97,13 @@ const Home = () => {
               className: "dress",
             },
           ]}
+          click={click}
         />
 
         <Shelf
           name="thirdShelf"
           items={[
-            { name: "Terracota Army", image: terracotta, className: "totem" },
+            { name: "Terracotta Army", image: terracotta, className: "totem" },
             {
               name: "Dr Seuss The Foot Book",
               image: footBook,
@@ -109,6 +115,7 @@ const Home = () => {
               className: "totem",
             },
           ]}
+          click={click}
         />
         <Shelf
           name="fourthShelf"
@@ -116,7 +123,8 @@ const Home = () => {
             {
               name: "James Dean's Car aka Little Bastard",
               image: jamesDean,
-              className: "car totem animate__animated animate__lightSpeedInRight animate__delay-0s animate__repeat-1 animate__slower	3s",
+              className:
+                "car totem animate__animated animate__lightSpeedInRight animate__delay-0s animate__repeat-1 animate__slower	3s",
             },
             {
               name: "The Anguished Man",
@@ -124,18 +132,19 @@ const Home = () => {
               className: "anguished",
             },
           ]}
+          click={click}
         />
       </div>
     </div>
   );
 };
 
-const Shelf = ({ name, items }) => {
+const Shelf = ({ name, items, click }) => {
   return (
     <div className={name}>
       {items.map((item, index) => {
         return (
-          <img 
+          <img
             src={item.image}
             key={index}
             className={item.className}
