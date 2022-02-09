@@ -114,7 +114,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
       {/* map all objects from admin database */}
         {allObjects.map((item, index) => {
           return (
-
+                <>
               <Totem key={item.id} item={item} />
 
             <div className="cardAndAddButton">
