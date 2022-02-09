@@ -69,7 +69,19 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
     populateListfromFav();
   };
 
-  const addNewtoDBandFav = async () => {};
+  const addNewTotem = async (object) => {
+    const payload = JSON.stringify(object);
+    const res = await fetch(`${process.env.REACT_APP_API}/totem/${user.id}`, {
+      mode: "cors",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: payload,
+    });
+    let returnedTotem = await res.json();
+    addExistingtoFav(returnedTotem);
+  };
 
   return (
     <div>
@@ -91,7 +103,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
       </div>
       <div>
         <div> Add new object</div>
-        <button onClick={addNewtoDBandFav}> Add your own object </button>
+        <button onClick={addNewTotem}> Add your own object </button>
       </div>
       {/* map all objects from admin database */}
       <div className="cardContainer">
@@ -121,7 +133,7 @@ const Object = ({ item }) => {
       <p>Date: {item.date}</p>
       <p>Location: {item.location}</p>
       <p>Description: {item.description}</p>.
-      {/* <img src={totem.url}  alt="totem" /> */}
+      <img src={item.url} alt="totem" />
     </div>
   );
 };
