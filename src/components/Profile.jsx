@@ -83,54 +83,77 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
 
   //maps through all objects, and user's favourites, using the Totem component (below)
   return (
-    <div>
-      <h1 className="profile">Profile </h1>
-      <div className="userList">
+    <div class="profilePage">
+        <div className="welcomeFrame">
+      <h1 className="welcome">Welcome {user.name} </h1>
+      </div>
+
+      <div class="userListContainer">
+
         {/* map all from user favourites */}
         {userList.map((item, index) => {
           return (
-            <>
+
+               <div className="CardAndDeleteButton">
               <Totem key={index} item={item} />
-              <button value="delete" onClick={() => deletefromFavList(item)}>
-                delete
+              <div className="deleteButton">
+              <button class="button-19 " role="button" value="delete" onClick={() => deletefromFavList(item)}>
+                Delete
               </button>
-            </>
+              </div>
+              </div>
           );
         })}
       </div>
-      <div>
-        <div> Add new object</div>
-        <button onClick={addNewTotem}> Add your own object </button>
+      
+      <div class="addNewObj">
+        <button class="button-19" role="button" onClick={addNewtoDBandFav}> Add your own object </button>
       </div>
+
+      <div class="adminListContainer">
       {/* map all objects from admin database */}
-      <div className="cardContainer">
         {allObjects.map((item, index) => {
           return (
-            <>
+
               <Totem key={item.id} item={item} />
+
+            <div className="cardAndAddButton">
+              <Totem key={item.id} item={item} />
+              <div className="addButton">
+
               <button
+                class="button-19" role="button"
                 key={index}
                 value="add"
-                onClick={() => addExistingtoFav(item)}
-              >
+                onClick={() => addExistingtoFav(item)} >
                 Add
               </button>
+              </div>
+              </div>
+              
             </>
           );
         })}
+      
       </div>
-    </div>
+      
+      </div>
   );
 };
 
 const Totem = ({ item }) => {
+
+
   return (
-    <div>
+    <div class="totemCard">
+    <img src={item.url}  alt="totem" />
       <p>Name: {item.name}</p>
       <p>Date: {item.date}</p>
       <p>Location: {item.location}</p>
+
       <p>Description: {item.description}</p>
       <img src={item.url} alt="totem" />
+
     </div>
   );
 };

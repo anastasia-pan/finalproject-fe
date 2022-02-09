@@ -12,6 +12,7 @@ import cabinet from "../assets/cabinet.png";
 import candlestick from "../assets/candlestick.png";
 import candlestick2 from "../assets/candlestick2.png";
 
+
 const click = (name) => {
   console.log(`I'm an object called: ${name}`);
 };
