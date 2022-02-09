@@ -18,9 +18,6 @@ const Home = () => {
   const click = async (name) => {
     name = encodeURI(name);
     const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${name}`;
-    console.log(url);
-    console.log(`I'm an object called: ${name}`);
-    const payload = JSON.stringify({ name: name });
     const res = await fetch(url, {
       mode: "cors",
       method: "GET",
