@@ -128,16 +128,158 @@ nav a {
   margin: 0 4.5rem;
 }
 
-.animatedCandle {
+.addNewObj {
   margin: 0 auto;
+  width: 20rem;
+  height: 3rem;
+}
+
+.profilePage {
+  margin: 2rem auto;
+}
+
+.welcome {
+  font-family: "Bigelow Rules", cursive;
+  color: #290904;
+  font-size: 6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  width: 100px;
+  margin: 3rem auto;
+}
+
+.totemCard,
+.Card,
+.Object {
+  background-color: #b99c77;
+  border: 4px solid #693a2d;
+  padding: 1rem;
+  margin: 1rem;
+  overflow: scroll;
+}
+
+p {
+  font-family: "Poppins";
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.userListContainer,
+.adminListContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 5rem auto;
+  width: 1000px;
+}
+
+.userList,
+.adminList {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem 20rem;
+  max-width: 1000px;
+  max-height: 1200px;
+  background-color: blue;
+  border: 10px solid red;
+}
+
+.welcomeFrame {
+  margin: 4rem auto;
+  background: URL("../src/assets/welcome.png");
+  width: 700px;
+  height: 247px;
+}
+
+.welcome {
+  text-align: left;
+  margin: 4rem 4rem;
+  width: 500px;
+  height: 150px;
+}
+
+/* ===============button======================= */
+
+.addButton,
+.deleteButton {
+  text-align: center;
+  margin: 0 auto;
+  height: 2rem;
+  width: 6rem;
+}
+
+.button-19 {
+  appearance: button;
+  background-color: #71482f;
+  border: solid transparent;
+
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  box-shadow: 5px 10px 20px #2b1f17;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 5px 8px;
+  text-align: center;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #71482f;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(80%);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+/* ==============candle lol==================== */
+
+.animatedCandle {
+  margin: -2rem auto;
   width: 200px;
   position: fixed;
   bottom: 0;
-  right: 7rem;
+  right: 8rem;
 }
 
 .animatedCandle2 {
-  margin: 0 auto;
+  margin: -4rem auto;
   width: 200px;
   position: fixed;
   bottom: 0;
@@ -147,7 +289,7 @@ nav a {
 .holder {
   margin: 12rem auto 0;
   width: 150px;
-  height: 200px;
+  height: 400px;
   position: relative;
 }
 .holder *,
@@ -159,16 +301,19 @@ nav a {
 
 .candle {
   bottom: 0;
-  width: 80px;
-  height: 90px;
-
+  width: 140px;
+  height: 130px;
+  border-radius: 150px / 40px;
   background: #190f02;
   background: linear-gradient(#e48825, #e78e0e, #833c03);
 }
+
 .candle:before {
   width: 100%;
   height: 40px;
-  background: cream;
+  border-radius: 50%;
+  border: 1px solid #d47401;
+  background: #b86409;
 }
 
 .candle:after {
@@ -176,7 +321,9 @@ nav a {
   height: 10px;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 50%;
   top: 14px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .thread {
@@ -185,18 +332,20 @@ nav a {
   top: -17px;
   left: 50%;
   z-index: 1;
+  border-radius: 40% 40% 0 0;
   transform: translateX(-50%);
   background: #121212;
 }
 
 .flame {
   width: 24px;
-  height: 80px;
+  height: 120px;
   left: 50%;
   transform-origin: 50% 100%;
   transform: translateX(-50%);
   bottom: 100%;
   border-radius: 50% 50% 20% 20%;
+
   background: linear-gradient(white 80%, transparent);
   animation: moveFlame 6s linear infinite, enlargeFlame 5s linear infinite;
 }

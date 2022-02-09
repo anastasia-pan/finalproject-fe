@@ -33,7 +33,7 @@ const Home = () => {
         <div class="wax"></div>
         </div>
         </div>
-        <div className="stick"> <img src={candlestick}/></div>
+        
         </div>
 
         <div className="animatedCandle2">
@@ -49,7 +49,7 @@ const Home = () => {
         <div class="wax"></div>
         </div>
         </div>
-        <div className="stick"> <img src={candlestick2}/></div>
+        
         </div>
 
         
