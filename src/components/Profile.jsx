@@ -93,7 +93,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
 
       <div class="userListContainer">
         {/* map all from user favourites */}
-        {userList.map((item, index) => {
+        {/* {userList.map((item, index) => {
           return (
             <div className="CardAndDeleteButton">
               <Totem key={index} item={item} />
@@ -109,7 +109,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
               </div>
             </div>
           );
-        })}
+        })} */}
       </div>
 
       <div class="addNewObj">
@@ -149,13 +149,10 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
 const Totem = ({ item }) => {
   return (
     <div class="totemCard">
-      <img src={item.url} alt="totem" />
-      <p>Name: {item.name}</p>
-      <p>Date: {item.date}</p>
-      <p>Location: {item.location}</p>
-
-      <p>Description: {item.description}</p>
-      <img src={item.url} alt="totem" />
+      <img src={item.illustration} alt="totem"  className="totemIllus" />
+      <div className="totemName">
+      <h2>{item.name}</h2>
+      </div>
     </div>
   );
 };
