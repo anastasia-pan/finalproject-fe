@@ -12,8 +12,11 @@ import cabinet from "../assets/cabinet.png";
 import { State, setState, useState } from "react";
 import "animate.css";
 
+import Modal from "./Modal";
+
 const Home = () => {
   const [currentTotem, setCurrentTotem] = useState({});
+  const [isOpen, setIsOpen]=useState(false)
 
   const click = async (name) => {
     name = encodeURI(name);
@@ -46,7 +49,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="animatedCandle2 animate__animated animate__fadeIn animate__delay-2s animate__repeat-1	1 animate__slower	3s">
+      <div className="animatedCandle2 animate__animated animate__fadeIn animate__delay-2s animate__repeat-1	1 animate__slower	3s"
+      onClick={()=>setIsOpen(true)}>
         <div className="entireCandle">
           <div className="holder">
             <div className="candle">
@@ -131,6 +135,14 @@ const Home = () => {
           ]}
           click={click}
         />
+
+            <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
+                <p>
+                  totem information 
+                </p>
+              </Modal>
+
+
       </div>
     </div>
   );

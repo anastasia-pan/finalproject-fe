@@ -53,6 +53,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
     );
     populateListfromFav();
   };
+  
   //deletes Totem from UserFavourites table and
   //set UserList state
   const deletefromFavList = async (object) => {
