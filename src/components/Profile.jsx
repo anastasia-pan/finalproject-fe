@@ -59,7 +59,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
     );
     populateListfromFav();
   };
-  
+
   //deletes Totem from UserFavourites table and
   //set UserList state
   const deletefromFavList = async (object) => {
@@ -75,6 +75,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
   };
   //adds a brand new Totem to database, and adds to user favourites
   const addNewTotem = async (object) => {
+    const placeholderURL = "https://i.ibb.co/94KDG3b/placeholder.png";
     const payload = JSON.stringify(object);
     const res = await fetch(
       `${process.env.REACT_APP_BASE_URL}/totem/${user.id}`,
@@ -160,9 +161,9 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
 const Totem = ({ item }) => {
   return (
     <div className="totemCard">
-      <img src={item.illustration} alt="totem"  className="totemIllus" />
+      <img src={item.illustration} alt="totem" className="totemIllus" />
       <div className="totemName">
-      <h2>{item.name}</h2>
+        <h2>{item.name}</h2>
       </div>
     </div>
   );

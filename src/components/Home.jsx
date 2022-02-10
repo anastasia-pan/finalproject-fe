@@ -9,29 +9,19 @@ import terracotta from "../assets/terracotta.png";
 import footBook from "../assets/foot-book.png";
 import lemb from "../assets/lemb.png";
 import cabinet from "../assets/cabinet.png";
-import { State, setState, useState } from "react";
+import { State, setState, useState, useEffect } from "react";
 import "animate.css";
 
 import Modal from "./Modal";
 
 const Home = () => {
-  const [currentTotem, setCurrentTotem] = useState({MSG: "i am null"});
-  const [isOpen, setIsOpen]=useState(false)
+  const [currentTotem, setCurrentTotem] = useState(null);
+  const [currentTotem2, setCurrentTotem2] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const closing = () => {
-    console.log("before close", currentTotem)
-      setCurrentTotem(null)
-      
-      console.log("closing killed totem")
-      setIsOpen(false)
-      console.log("after close", currentTotem)
-      console.log("closing closed modal")
-  };
-
-  const click = async (name) => {
-    name = encodeURI(name);
-    console.log(name)
-    const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${name}`;
+  useEffect(async () => {
+    let thisname = encodeURI(currentTotem.name);
+    const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${thisname}`;
     const res = await fetch(url, {
       mode: "cors",
       method: "GET",
@@ -40,19 +30,38 @@ const Home = () => {
       },
     });
     let totem = await res.json();
-    console.log("!!!!!!!!", totem)
-    setCurrentTotem(totem);
-    console.log(currentTotem)
-    console.log(currentTotem);
-    if (currentTotem) {
-        setIsOpen(true)
-        console.log("modal is open")
-    } else {
-        setIsOpen(false)
-        console.log("modal is closed")
-    }
+    console.log("!!!!!!!!", totem);
+    setCurrentTotem2(totem);
+    setIsOpen(true);
+  }, [currentTotem]);
+
+  const closing = () => {
+    console.log("before close", currentTotem);
+    setCurrentTotem(null);
+    console.log("closing killed totem");
+    setIsOpen(false);
+    console.log("after close", currentTotem);
+    console.log("closing closed modal");
+  };
+  const click = () => {
+    console.log("boop");
   };
 
+  //     if (currentTotem) {
+
+  //     }
+
+  //     console.log(currentTotem);
+  //     setCurrentTotem({ msg: "Im not null" });
+  //     console.log(currentTotem);
+  //     // if (currentTotem) {
+  //     //   setIsOpen(true);
+  //     //   console.log("modal is open");
+  //     // } else {
+  //     //   setIsOpen(false);
+  //     //   console.log("modal is closed");
+  //     // }
+  //   };
 
   return (
     <div className="home">
@@ -71,8 +80,10 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="animatedCandle2 animate__animated animate__fadeIn animate__delay-2s animate__repeat-1	1 animate__slower	3s"
-      onClick={()=>setIsOpen(true)}>
+      <div
+        className="animatedCandle2 animate__animated animate__fadeIn animate__delay-2s animate__repeat-1	1 animate__slower	3s"
+        onClick={() => setIsOpen(true)}
+      >
         <div className="entireCandle">
           <div className="holder">
             <div className="candle">
@@ -108,6 +119,8 @@ const Home = () => {
             { name: "Uluru Rocks", image: rock, className: "totem" },
           ]}
           click={click}
+          setCurrentTotem={setCurrentTotem}
+          currentTotem={currentTotem}
         />
 
         <Shelf
@@ -121,6 +134,8 @@ const Home = () => {
             },
           ]}
           click={click}
+          setCurrentTotem={setCurrentTotem}
+          currentTotem={currentTotem}
         />
 
         <Shelf
@@ -139,6 +154,8 @@ const Home = () => {
             },
           ]}
           click={click}
+          currentTotem={currentTotem}
+          setCurrentTotem={setCurrentTotem}
         />
         <Shelf
           name="fourthShelf"
@@ -156,21 +173,48 @@ const Home = () => {
             },
           ]}
           click={click}
+          setCurrentTotem={setCurrentTotem}
+          currentTotem={currentTotem}
         />
 
-            <Modal open={isOpen} onClose={closing}>
-                <p>
-                  totem information 
-                </p>
-              </Modal>
-
-
+        <Modal open={isOpen} onClose={closing}>
+          <p>{currentTotem2.name}</p>
+          <img src={currentTotem2.illustration} />
+        </Modal>
       </div>
     </div>
   );
 };
 
-const Shelf = ({ name, items, click }) => {
+const Shelf = ({ name, items, click, setCurrentTotem, currentTotem }) => {
+  const clicktwo = async (name) => {
+    console.log(currentTotem);
+    console.log(name);
+    // name = encodeURI(name);
+    // console.log(name);
+    // const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${name}`;
+    // const res = await fetch(url, {
+    //   mode: "cors",
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+    // let totem = await res.json();
+    // console.log("!!!!!!!!", totem);
+
+    console.log(currentTotem);
+    setCurrentTotem({ msg: "Im not null" });
+    console.log(currentTotem);
+    // if (currentTotem) {
+    //   setIsOpen(true);
+    //   console.log("modal is open");
+    // } else {
+    //   setIsOpen(false);
+    //   console.log("modal is closed");
+    // }
+  };
+
   return (
     <div className={name}>
       {items.map((item, index) => {
@@ -179,7 +223,9 @@ const Shelf = ({ name, items, click }) => {
             src={item.image}
             key={index}
             className={item.className}
-            onClick={() => click(item.name)}
+            onClick={() => setCurrentTotem(item)}
+            setCurrentTotem={setCurrentTotem}
+            currentTotem={currentTotem}
           />
         );
       })}
