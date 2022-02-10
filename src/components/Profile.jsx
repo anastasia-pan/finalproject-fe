@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
+import Modal from "./Modal";
+import CreateTotem from "./Webform";
+
+
 
 const Profile = ({ user, allObjects, setAllObjects }) => {
   //User's favourite list, triggered at UseEffect
   const [userList, setUserList] = useState([]);
+  //Modal open and close states
+  const [isOpen, setIsOpen] =useState(false)
   //function that gets all admin totems from database and sets state for allObjects
   const getAllTotems = async () => {
     const res = await fetch(
@@ -112,11 +118,17 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
         })}
       </div>
 
+      
+        
       <div class="addNewObj">
-        <button className="button-19" onClick={addNewTotem}>
+        <button className="button-19" onClick={()=> setIsOpen(true)}/>
+          <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
+            <CreateTotem user={user}  />
+             </Modal>
+        {/* //{addNewTotem}> */}
           {" "}
           Add your own object{" "}
-        </button>
+        
       </div>
 
       <div class="adminListContainer">
