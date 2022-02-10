@@ -184,8 +184,8 @@ const Home = () => {
         />
 
         <Modal open={isOpen} onClose={closing}>
-          <p>{currentTotem2.name}</p>
-          <img src={currentTotem2.illustration} />
+          {currentTotem2 ? <> <p>{currentTotem2.name}</p>
+          <img src={currentTotem2.illustration} </> : ""/>
         </Modal>
       </div>
     </div>
