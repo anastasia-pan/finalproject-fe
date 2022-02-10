@@ -9,6 +9,7 @@ import terracotta from "../assets/terracotta.png";
 import footBook from "../assets/foot-book.png";
 import lemb from "../assets/lemb.png";
 import cabinet from "../assets/cabinet.png";
+
 import { State, setState, useState } from "react";
 import "animate.css";
 
@@ -87,6 +88,10 @@ const Home = () => {
         </div>
       </div>
 
+        <div className="lampshade animate__animated animate__swing animate__delay-0s animate__repeat-1	1 animate__slow	2s " >
+      <h2 className="welcomeBlurb">Welcome to Creepy Curios, a collection of mysterious objects from around the world.
+      Click the objects in the cabinet & see what happens!</h2>
+      </div>
       <img src={cabinet} className="cabinet" />
 
       <div className="cabinetObjects">

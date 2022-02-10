@@ -88,8 +88,14 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
   //maps through all objects, and user's favourites, using the Totem component (below)
   return (
     <div className="profilePage">
-      <div className="welcomeFrame">
+      <div className="welcomeFrame animate__animated animate__bounceInDown animate__delay-0s animate__repeat-1	1 animate__slow	2s ">
         <h1 className="welcome">Welcome {user.username} </h1>
+      </div>
+      <div className="profileBlurb">
+          <div className="blurb animate__animated animate__fadeIn animate__delay-1s animate__repeat-1	1 animate__slower	3s ">
+          <h3>Here you can create your very own list of creepy curios! You can add objects from our featured collection, or add your own!
+              Simply click "Add' below your chosen object or 'Add your own object' and fill in the form to add your own object to your list!</h3>
+          </div>
       </div>
 
       <div className="userListContainer">
