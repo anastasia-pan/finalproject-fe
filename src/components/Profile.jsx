@@ -1,4 +1,4 @@
-import { State, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Profile = ({ user, allObjects, setAllObjects }) => {
   //User's favourite list, triggered at UseEffect
@@ -86,21 +86,20 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
 
   //maps through all objects, and user's favourites, using the Totem component (below)
   return (
-    <div class="profilePage">
+    <div className="profilePage">
       <div className="welcomeFrame">
         <h1 className="welcome">Welcome {user.name} </h1>
       </div>
 
-      <div class="userListContainer">
+      <div className="userListContainer">
         {/* map all from user favourites */}
-        {/* {userList.map((item, index) => {
+        {userList.map((item, index) => {
           return (
             <div className="CardAndDeleteButton">
               <Totem key={index} item={item} />
               <div className="deleteButton">
                 <button
-                  class="button-19 "
-                  role="button"
+                  className="button-19 "
                   value="delete"
                   onClick={() => deletefromFavList(item)}
                 >
@@ -109,11 +108,11 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
               </div>
             </div>
           );
-        })} */}
+        })}
       </div>
 
       <div class="addNewObj">
-        <button class="button-19" role="button" onClick={addNewTotem}>
+        <button className="button-19" onClick={addNewTotem}>
           {" "}
           Add your own object{" "}
         </button>
@@ -128,8 +127,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
                 <Totem key={item.id} item={item} />
                 <div className="addButton">
                   <button
-                    class="button-19"
-                    role="button"
+                    className="button-19"
                     key={index}
                     value="add"
                     onClick={() => addExistingtoFav(item)}
@@ -148,7 +146,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
 
 const Totem = ({ item }) => {
   return (
-    <div class="totemCard">
+    <div className="totemCard">
       <img src={item.illustration} alt="totem"  className="totemIllus" />
       <div className="totemName">
       <h2>{item.name}</h2>
