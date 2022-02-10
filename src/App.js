@@ -4,8 +4,7 @@ import "./App.css";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Location from "./components/Location";
-import Decade from "./components/Decade";
-import Category from "./components/Category";
+import Dates from "./components/Dates";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 // import CardContainer from "./components/CardContainer";
@@ -38,7 +37,7 @@ function App() {
             }
           /> */}
           <Route path="/location" element={<Location />} />
-          <Route path="/decades" element={<Decade />} />
+          <Route path="/dates" element={<Dates />} />
 
           <Route
             path="/profile"
