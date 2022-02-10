@@ -30,11 +30,7 @@ function Navbar({ user, setUser }) {
               Decades
             </Link>
           </li>
-          <li>
-            <Link to="/decades" className="middle">
-              Category
-            </Link>
-          </li>
+        
           {/* <li>
             <Link to="/login" className="middle">
               Login/Register
