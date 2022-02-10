@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import Profile from "./Profile";
 
-function CreateTotem ({user}) {
+
+
+function CreateTotem ({user, populateListfromFav, addExistingtoFav, deletefromFavList}) {
 
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -17,12 +20,16 @@ function CreateTotem ({user}) {
 
   const submitForm = async (e) => {
     e.preventDefault();
+    const imageLink= "https://i.ibb.co/fpKc3gh/placeholder.png"
     const payload = JSON.stringify({
       name: name,
       location:location,
       date:date,
       description:description,
+      image: imageLink,
+      illustration: imageLink
     });
+    console.log(payload)
     const res = await fetch(baseUrl, {
       method: "POST",
       mode: "cors",
@@ -31,6 +38,8 @@ function CreateTotem ({user}) {
       },
       body: payload,
     });
+    let returnTotem = await res.json()
+    addExistingtoFav(returnTotem)
   };
   return (
     <form onSubmit={submitForm}>
@@ -50,7 +59,7 @@ function CreateTotem ({user}) {
 
     
 
-      <input type="submit" value="Submit" className="button-19 submit" role="button" />
+      <input type="submit" value="Submit" className="button-19 submit" role="button"  />
     </form>
   );
 }
