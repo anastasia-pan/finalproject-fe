@@ -178,8 +178,7 @@ const Home = () => {
         />
 
         <Modal open={isOpen} onClose={closing}>
-          <p>{currentTotem2.name}</p>
-          <img src={currentTotem2.illustration} />
+          <div>{currentTotem2 ? <p>{currentTotem2.name}</p> : <p>""</p>}</div>
         </Modal>
       </div>
     </div>
@@ -187,34 +186,6 @@ const Home = () => {
 };
 
 const Shelf = ({ name, items, click, setCurrentTotem, currentTotem }) => {
-  const clicktwo = async (name) => {
-    console.log(currentTotem);
-    console.log(name);
-    // name = encodeURI(name);
-    // console.log(name);
-    // const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${name}`;
-    // const res = await fetch(url, {
-    //   mode: "cors",
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    // let totem = await res.json();
-    // console.log("!!!!!!!!", totem);
-
-    console.log(currentTotem);
-    setCurrentTotem({ msg: "Im not null" });
-    console.log(currentTotem);
-    // if (currentTotem) {
-    //   setIsOpen(true);
-    //   console.log("modal is open");
-    // } else {
-    //   setIsOpen(false);
-    //   console.log("modal is closed");
-    // }
-  };
-
   return (
     <div className={name}>
       {items.map((item, index) => {
@@ -222,7 +193,7 @@ const Shelf = ({ name, items, click, setCurrentTotem, currentTotem }) => {
           <img
             src={item.image}
             key={index}
-            className={item.className}
+            className={item.name}
             onClick={() => setCurrentTotem(item)}
             setCurrentTotem={setCurrentTotem}
             currentTotem={currentTotem}
