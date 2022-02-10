@@ -17,7 +17,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
     );
 
     const data = await res.json();
-
+    console.log(user);
     setAllObjects(data);
   };
   //fetches all of user favs from UserFavourites table
@@ -88,7 +88,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
   return (
     <div class="profilePage">
       <div className="welcomeFrame">
-        <h1 className="welcome">Welcome {user.name} </h1>
+        <h1 className="welcome">Welcome {user.username} </h1>
       </div>
 
       <div class="userListContainer">
