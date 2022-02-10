@@ -26,8 +26,8 @@ function Navbar({ user, setUser }) {
             </Link>
           </li>
           <li>
-            <Link to="/decades" className="middle">
-              Decades
+            <Link to="/dates" className="middle">
+              Dates
             </Link>
           </li>
         

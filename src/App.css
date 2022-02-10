@@ -12,6 +12,7 @@
 html {
   background: URL("./assets/wallpaper.png") left top repeat;
 }
+
 .container {
   height: 100vh;
   background: URL("./assets/portrait-half-left.png") left center no-repeat,
@@ -186,6 +187,59 @@ nav a {
   background-color: #b99c77;
   padding: 0.5rem;
   box-shadow: 5px 10px 20px #2b1f17;
+}
+
+.totemIllusDate {
+  object-fit: contain;
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+}
+
+.totemNameDate {
+  width: 200px;
+  margin: 0rem 25rem;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #b99c77;
+  padding: 0.2rem;
+  box-shadow: 5px 10px 20px #2b1f17;
+}
+
+.dateList {
+  margin: 9rem auto;
+  width: 800px;
+  height: 100%;
+}
+
+.dateContainer {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.attachLine {
+  background-color: #2b1f17;
+  width: 400px;
+  height: 10px;
+}
+
+.verticalLine {
+  background-color: #2b1f17;
+  width: 10px;
+  height: 2500px;
+  margin: 0 auto;
+}
+
+.illusAndDateAndLine {
+  width: 200px;
+}
+
+.illusAndLine {
+  display: flex;
+  justify-content: center;
+  width: 500px;
 }
 
 p {
