@@ -37,9 +37,8 @@ function App() {
               />
             }
           /> */}
-          <Route path="/objects/location" element={<Location />} />
-          <Route path="/objects/decade" element={<Decade />} />
-          <Route path="/objects/category" element={<Category />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/decades" element={<Decade />} />
 
           <Route
             path="/profile"
