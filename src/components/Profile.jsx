@@ -13,7 +13,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
   const getAllTotems = async () => {
     const res = await fetch(
       //   process.env url needed WILL BE CHANGED ALSO
-      `${process.env.REACT_APP_BASE_URL}/admin/totem`,
+      `${process.env.REACT_APP_BASE_URL}/totem/getalladmin`,
 
       {
         mode: "cors",
@@ -23,7 +23,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
     );
 
     const data = await res.json();
-    console.log(user);
+    console.log(data)
     setAllObjects(data);
   };
   //fetches all of user favs from UserFavourites table
@@ -130,7 +130,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
       <div class="addNewObj">
         <button className="button-19" onClick={()=> setIsOpen(true)}/>
           <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
-            <CreateTotem user={user}  />
+            <CreateTotem user={user} populateListfromFav={populateListfromFav} addExistingtoFav={addExistingtoFav} deletefromFavList={deletefromFavList}  />
              </Modal>
         {/* //{addNewTotem}> */}
           {" "}

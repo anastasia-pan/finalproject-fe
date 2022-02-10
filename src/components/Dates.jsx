@@ -23,7 +23,9 @@ const Dates = () => {
 
   useEffect(() => {
     getAllTotems();
-  });
+  }
+  , []
+  );
 
   //======================= main return =======================//
 
