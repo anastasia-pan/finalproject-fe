@@ -15,11 +15,22 @@ import "animate.css";
 import Modal from "./Modal";
 
 const Home = () => {
-  const [currentTotem, setCurrentTotem] = useState({});
+  const [currentTotem, setCurrentTotem] = useState({MSG: "i am null"});
   const [isOpen, setIsOpen]=useState(false)
+
+  const closing = () => {
+    console.log("before close", currentTotem)
+      setCurrentTotem(null)
+      
+      console.log("closing killed totem")
+      setIsOpen(false)
+      console.log("after close", currentTotem)
+      console.log("closing closed modal")
+  };
 
   const click = async (name) => {
     name = encodeURI(name);
+    console.log(name)
     const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${name}`;
     const res = await fetch(url, {
       mode: "cors",
@@ -29,9 +40,20 @@ const Home = () => {
       },
     });
     let totem = await res.json();
+    console.log("!!!!!!!!", totem)
     setCurrentTotem(totem);
+    console.log(currentTotem)
     console.log(currentTotem);
+    if (currentTotem) {
+        setIsOpen(true)
+        console.log("modal is open")
+    } else {
+        setIsOpen(false)
+        console.log("modal is closed")
+    }
   };
+
+
   return (
     <div className="home">
       <div className="animatedCandle animate__animated animate__fadeIn animate__delay-1s animate__repeat-1	1 animate__slower	3s">
@@ -136,7 +158,7 @@ const Home = () => {
           click={click}
         />
 
-            <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
+            <Modal open={isOpen} onClose={closing}>
                 <p>
                   totem information 
                 </p>
