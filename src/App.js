@@ -37,7 +37,7 @@ function App() {
             }
           /> */}
           <Route path="/location" element={<Location />} />
-          <Route path="/dates" element={<Dates />} />
+          <Route path="/dates" element={<Dates user={user} />} />
 
           <Route
             path="/profile"
