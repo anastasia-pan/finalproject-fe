@@ -170,7 +170,7 @@ nav a {
 
 .totemCard {
   margin: 1rem;
-  height: 400px;
+  height: 500px;
   width: 200px;
 }
 
@@ -182,6 +182,9 @@ nav a {
 }
 
 .totemName {
+  height: 175px;
+  width: 200px;
+  overflow: scroll;
   margin: 1rem 0;
   border-radius: 25px;
   text-align: center;
@@ -372,6 +375,13 @@ h1 {
   width: 500px;
   height: 300px;
   object-fit: contain;
+}
+
+.totemForm {
+  text-align: right;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
 }
 
 /* ===============button======================= */

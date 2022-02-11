@@ -43,23 +43,25 @@ function CreateTotem ({user, populateListfromFav, addExistingtoFav, deletefromFa
   };
   return (
     <form onSubmit={submitForm}>
+      <div className="totemForm">
       <h1>Create Totem</h1>
-      <label htmlFor="name">Totem Name:</label>
+      <label htmlFor="name">Name:</label>
       <input type="text" name="name" value={name} onChange={handleNameChange} />
 
-      <label htmlFor="location">Totem Found:</label>
+      <label htmlFor="location">Location:</label>
       <input type="text" name="location" value={location} onChange={handleLocationChange} />
 
-      <label htmlFor="date">Year Found</label>
+      <label htmlFor="date">Year Found:</label>
       <input type="text" name="date" value={date} onChange={handleDateChange} />
 
-      <label htmlFor="description">Totem Description:</label>
+      <label htmlFor="description">Description:</label>
       <input type="text" name="description" value={description} onChange={handleDescriptionChange} />
-
+      </div>
 
     
+      <center><input type="submit" value="Submit" className="button-19 submit" role="button" /></center>
+      
 
-      <input type="submit" value="Submit" className="button-19 submit" role="button"  />
     </form>
   );
 }

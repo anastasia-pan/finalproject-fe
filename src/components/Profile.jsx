@@ -101,7 +101,7 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
       <div className="profileBlurb">
           <div className="blurb animate__animated animate__fadeIn animate__delay-1s animate__repeat-1	1 animate__slower	3s ">
           <h3>Here you can create your very own list of creepy curios! You can add objects from our featured collection, or add your own!
-              Simply click "Add' below your chosen object or 'Add your own object' and fill in the form to add your own object to your list!</h3>
+              Simply click 'Add' below your chosen object or 'Add your own object' and fill in the form to add your own object to your list!</h3>
           </div>
       </div>
 
@@ -170,6 +170,8 @@ const Totem = ({ item }) => {
       <img src={item.illustration} alt="totem" className="totemIllus" />
       <div className="totemName">
         <h2>{item.name}</h2>
+        <h3>{item.date}</h3>
+        <p>{item.description}</p>
       </div>
     </div>
   );
