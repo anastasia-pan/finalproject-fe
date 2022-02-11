@@ -22,7 +22,7 @@ const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(async () => {
-    let thisname = encodeURI(currentTotem.name);
+    let thisname = encodeURI(currentTotem.name).toLowerCase();
     const url = `${process.env.REACT_APP_BASE_URL}/totem/name/${thisname}`;
     const res = await fetch(url, {
       mode: "cors",
@@ -100,9 +100,11 @@ const Home = () => {
         </div>
       </div>
 
-        <div className="lampshade animate__animated animate__swing animate__delay-0s animate__repeat-1	1 animate__slow	2s " >
-      <h2 className="welcomeBlurb">Welcome to Creepy Curios, a collection of mysterious objects from around the world.
-      Click the objects in the cabinet & see what happens!</h2>
+      <div className="lampshade animate__animated animate__swing animate__delay-0s animate__repeat-1	1 animate__slow	2s ">
+        <h2 className="welcomeBlurb">
+          Welcome to Creepy Curios, a collection of mysterious objects from
+          around the world. Click the objects in the cabinet & see what happens!
+        </h2>
       </div>
       <img src={cabinet} className="cabinet" />
 
@@ -184,14 +186,20 @@ const Home = () => {
         />
 
         <Modal open={isOpen} onClose={closing}>
-          {currentTotem2 ? <> 
-          <div className="totemModal">
-          <h1>{currentTotem2.name}</h1>
-          <img className="modalImage" src={currentTotem2.image}/> 
-          <p>{currentTotem2.description}</p>
-          <h3>{currentTotem2.date}, {currentTotem2.location}</h3>
-          </div>
-          </> : "" }
+          {currentTotem2 ? (
+            <>
+              <div className="totemModal">
+                <h1>{currentTotem2.name}</h1>
+                <img className="modalImage" src={currentTotem2.image} />
+                <p>{currentTotem2.description}</p>
+                <h3>
+                  {currentTotem2.date}, {currentTotem2.location}
+                </h3>
+              </div>
+            </>
+          ) : (
+            ""
+          )}
         </Modal>
       </div>
     </div>
