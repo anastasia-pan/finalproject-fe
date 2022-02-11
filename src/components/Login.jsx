@@ -1,4 +1,6 @@
 import { useState } from "react";
+import {Link} from 'react-router-dom';
+
 // Login function created. Testing not yet done- Marc L
 function Login({ user, setUser }) {
   const [userName, setUserName] = useState("");
@@ -45,9 +47,10 @@ function Login({ user, setUser }) {
           name="password"
           value={password}
           onChange={handlePassword}
-        />
-
+        />    
+        
         <input className="submit" type="submit" value="Submit" className="button-19 submit" role="button"/>
+        
       </form>
     </>
   );

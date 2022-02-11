@@ -143,7 +143,7 @@ nav a {
 .addNewObj {
   margin: 0 auto;
   width: 20rem;
-  height: 3rem;
+  height: 1rem;
 }
 
 .profilePage {
@@ -360,6 +360,18 @@ h1 {
   padding: 31.5rem 2rem 0rem 0rem;
   right: 8.26rem;
   bottom: 9.8rem;
+}
+
+.totemModal {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.modalImage {
+  width: 500px;
+  height: 300px;
+  object-fit: contain;
 }
 
 /* ===============button======================= */
