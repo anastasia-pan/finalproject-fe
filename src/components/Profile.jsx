@@ -128,14 +128,14 @@ const Profile = ({ user, allObjects, setAllObjects }) => {
       
         
       <div class="addNewObj">
-        <button className="button-19" onClick={()=> setIsOpen(true)}/>
+        <button className="button-19" onClick={()=> setIsOpen(true)}>
+        {" "}
+          <h2>Add your own object</h2>{" "}
+          </button>
           <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
             <CreateTotem user={user}  />
              </Modal>
-        {/* //{addNewTotem}> */}
-          {" "}
-          Add your own object{" "}
-        
+       
       </div>
 
       <div class="adminListContainer">

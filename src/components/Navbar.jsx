@@ -52,7 +52,9 @@ function Navbar({ user, setUser }) {
               <>
               <li className="signinRegister" onClick={()=>setIsOpen(true)}>Login/Register</li>
               <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
+                
               <Login user={user} setUser={setUser} /> 
+              
               <Register/>
               </Modal>
               </>
