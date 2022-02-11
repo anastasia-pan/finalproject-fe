@@ -187,7 +187,7 @@ const Home = () => {
           {currentTotem2 ? <> 
           <div className="totemModal">
           <h1>{currentTotem2.name}</h1>
-          <img className="modalImage" src={currentTotem2.illustration}/> 
+          <img className="modalImage" src={currentTotem2.image}/> 
           <p>{currentTotem2.description}</p>
           <h3>{currentTotem2.date}, {currentTotem2.location}</h3>
           </div>
